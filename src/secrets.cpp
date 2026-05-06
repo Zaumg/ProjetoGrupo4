@@ -57,10 +57,10 @@ emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
 )EOF";
 
 const char* TOPICOS_PUBLICAR[] = {
-        "senai134/peach/status",
-        "senai134/peach/log",
-        "senai134/peach/resposta",
-        "senai134/peach/lampada"
+        "senai134/yoshi/status",
+        "senai134/yoshi/log",
+        "senai134/yoshi/resposta",
+        "senai134/yoshi/lampada"
         
         
 };
@@ -68,10 +68,10 @@ const char* TOPICOS_PUBLICAR[] = {
 const int TOTAL_TOPICOS_PUBLICAR = 4;
 
 const char* TOPICOS_RECEBER[] = {
-    "senai134/peach/comando",
-    "senai134/peach/config",
-    "senai134/peach/display",
-    "senai134/peach/lampada"
+    "senai134/yoshi/comando",
+    "senai134/yoshi/config",
+    "senai134/yoshi/display",
+    "senai134/yoshi/lampada"
 };
 
 const int TOTAL_TOPICOS_RECEBER = 4;

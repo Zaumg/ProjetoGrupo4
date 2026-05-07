@@ -1,24 +1,24 @@
 #include "secrets.h"
 #include <Arduino.h>
 
-//Configurações do WiFi
+// Configurações do WiFi
 
-const char* WIFI_SSID = "SALA 09";
-const char* WIFI_SENHA = "info@134";
+const char *WIFI_SSID = "SALA 09";
+const char *WIFI_SENHA = "info@134";
 
 // ===================================
-// MQTT 
+// MQTT
 // ===================================
 
 const bool USAR_AWS_IOT = false;
 
-const char * MQTT_BROKER = "7f6088dfb62c42ddb45a41efd285589e.s1.eu.hivemq.cloud";
+const char *MQTT_BROKER = "7f6088dfb62c42ddb45a41efd285589e.s1.eu.hivemq.cloud";
 const int MQTT_PORTA = 8883;
 
-const char* MQTT_CLIENT_ID = "esp32_pedro_furtado";
+const char *MQTT_CLIENT_ID = "esp32_quiz_jogador";
 
-const char* MQTT_USUARIO = "pedrofurtado";
-const char* MQTT_SENHA = "Senai@134";
+const char *MQTT_USUARIO = "pedrofurtado";
+const char *MQTT_SENHA = "Senai@134";
 
 const bool MQTT_TLS = true;
 
@@ -56,25 +56,19 @@ emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
 -----END CERTIFICATE-----
 )EOF";
 
-const char* TOPICOS_PUBLICAR[] = {
-        "senai134/yoshi/status",
-        "senai134/yoshi/log",
-        "senai134/yoshi/resposta",
-        "senai134/yoshi/lampada"
-        
-        
+const char * TOPICOS_PUBLICAR[] = {
+  "quiz/pergunta",
+  "quiz/resposta",
 };
 
-const int TOTAL_TOPICOS_PUBLICAR = 4;
+const int TOTAL_TOPICOS_PUBLICAR = 2;
 
-const char* TOPICOS_RECEBER[] = {
-    "senai134/yoshi/comando",
-    "senai134/yoshi/config",
-    "senai134/yoshi/display",
-    "senai134/yoshi/lampada"
+const char * TOPICOS_RECEBER[] = {
+  "quiz/pergunta",
+  "quiz/resposta"
 };
 
-const int TOTAL_TOPICOS_RECEBER = 4;
+const int TOTAL_TOPICOS_RECEBER = 3;
 
 // ===================================
 // DEBUG
@@ -83,7 +77,7 @@ const int TOTAL_TOPICOS_RECEBER = 4;
 // 0 = sem mensagens
 // 1 = apenas erros
 // 2 = todas as mensagens
-const int DEBUG_NIVEL_INICIAL = 2; 
+const int DEBUG_NIVEL_INICIAL = 2;
 
 // Pino usado para forçar todas as mensagens
 const int PINO_HABILITA_DEBUG_COMPLETO = 4;

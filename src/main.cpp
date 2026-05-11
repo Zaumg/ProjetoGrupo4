@@ -11,7 +11,7 @@
 #define TOPICO_RESPOSTA  "quiz/resposta"
 
 // ===== LED RGB =====
-// ⚠️ Se não funcionar, teste pinos: 2, 4 ou 5
+// Se não funcionar, teste pinos: 2, 4 ou 5
 #define PIN_RGB 48
 
 Adafruit_NeoPixel led(1, PIN_RGB, NEO_GRB + NEO_KHZ800);
@@ -44,7 +44,7 @@ void tratarMensagem(const char *topico, const String &mensagem)
 
   String tipo = doc["tipo"].as<String>();
 
-  // 📩 RECEBE PERGUNTA → responde automático
+  // RECEBE PERGUNTA → responde automático
   if (strcmp(topico, TOPICO_PERGUNTA) == 0 && tipo == "pergunta")
   {
     delay(2000);
@@ -60,7 +60,7 @@ void tratarMensagem(const char *topico, const String &mensagem)
     publicarMensagem(TOPICO_RESPOSTA, msg.c_str());
   }
 
-  // 📊 RECEBE RESULTADO → muda LED
+  // RECEBE RESULTADO → muda LED
   if (strcmp(topico, TOPICO_RESPOSTA) == 0 && tipo == "resposta")
   {
     String resultado = doc["resposta"].as<String>();
@@ -69,12 +69,12 @@ void tratarMensagem(const char *topico, const String &mensagem)
 
     if (resultado == respostaCorretaDaPergunta)
     {
-      setColor(0, 255, 0); // 🟢 verde
+      setColor(0, 255, 0); // verde
     }
     else if (resultado != respostaCorretaDaPergunta)
     {
       debugInfo("entrou no else if em resposta errada");
-      setColor(255, 0, 0); // 🔴 vermelho
+      setColor(255, 0, 0); // vermelho
     }
     else
     {
@@ -99,7 +99,7 @@ void setup()
   led.clear();
   led.show();
 
-  // 🧪 TESTE INICIAL (confirma LED funcionando)
+  // TESTE INICIAL (confirma LED funcionando)
   setColor(255, 0, 0);
   delay(1000);
   setColor(0, 255, 0);
